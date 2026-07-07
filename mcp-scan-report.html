@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP Security Scan Report</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 24px; background: #f8fafc; color: #1f2937; }
+  .container { max-width: 800px; margin: 0 auto; }
+  .header { text-align: center; margin-bottom: 32px; }
+  .score-badge { display: inline-flex; align-items: center; gap: 16px; padding: 16px 32px; border-radius: 16px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .score-number { font-size: 36px; font-weight: 700; }
+  .grade-badge { display: inline-block; padding: 4px 16px; border-radius: 999px; font-size: 24px; font-weight: 700; color: white; }
+  .meta { color: #6b7280; font-size: 14px; margin-top: 12px; }
+  .meta span { margin: 0 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  th, td { padding: 10px 16px; text-align: left; border-bottom: 1px solid #f1f5f9; }
+  th { background: #f8fafc; font-size: 13px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+  h1 { font-size: 24px; margin: 0; color: #1f2937; }
+  footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>MCP Security Scan Report</h1>
+    <div class="score-badge">
+      <span class="score-number" style="color:#eab308">63/100</span>
+      <span class="grade-badge" style="background:#eab308">C</span>
+    </div>
+    <div class="meta">
+      <span>Target: ./fixtures/sample-vulnerable-server</span> &#183;
+      <span>Files: 4</span> &#183;
+      <span>7/8/2026, 2:38:55 AM</span>
+    </div>
+  </div>
+
+  
+
+  <div style="background:white;border-radius:8px;padding:16px;margin-bottom:24px;box-shadow:0 1px 2px rgba(0,0,0,0.05)">
+        <h2 style="font-size:16px;margin:0 0 4px 0">Findings Summary</h2>
+        <table>
+          <tr><th>Severity</th><th style="text-align:center">Count</th></tr>
+          <tr>
+          <td style="color:#ef4444;font-weight:600">Critical</td>
+          <td style="text-align:center;font-weight:600">1</td>
+        </tr>
+          <tr>
+          <td style="color:#f97316;font-weight:600">High</td>
+          <td style="text-align:center;font-weight:600">1</td>
+        </tr>
+        </table>
+      </div>
+      
+        <div style="margin-bottom:24px">
+          <h2 style="color:#ef4444;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #ef444440">
+            Critical
+            <span style="font-size:14px;font-weight:400;color:#6b7280">(1)</span>
+          </h2>
+          <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
+                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
+                Hardcoded API token detected
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— fixtures\sample-vulnerable-server\config.env:3</span>
+              </summary>
+              <div style="margin-top:10px;padding-left:4px">
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A known provider token format was found hardcoded in the source code. This type of secret can be used to access cloud services, incurring costs or exposing data.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">API_KEY=sk-1...cdef</pre>
+                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
+                  <strong>Recommendation:</strong> Move this secret to an environment variable or secrets manager. Load it at runtime via process.env.YOUR_KEY.
+                </div>
+              </div>
+            </details>
+        </div>
+        
+        <div style="margin-bottom:24px">
+          <h2 style="color:#f97316;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #f9731640">
+            High
+            <span style="font-size:14px;font-weight:400;color:#6b7280">(1)</span>
+          </h2>
+          <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
+                <span style="color:#f97316;margin-right:8px">&#9679;</span>
+                Server bound to all network interfaces
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— fixtures\sample-vulnerable-server\server.ts:29</span>
+              </summary>
+              <div style="margin-top:10px;padding-left:4px">
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">httpServer.listen(3000, '0.0.0.0', () => {</pre>
+                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
+                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
+                </div>
+              </div>
+            </details>
+        </div>
+</div>
+<footer>Generated by MCP Server Security Scanner</footer>
+</body>
+</html>

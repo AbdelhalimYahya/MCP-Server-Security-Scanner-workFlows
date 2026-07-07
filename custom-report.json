@@ -1,0 +1,29 @@
+{
+  "target": "./fixtures/sample-vulnerable-server",
+  "scannedAt": "2026-07-07T23:38:55.621Z",
+  "filesScanned": 4,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded API token detected",
+      "description": "A known provider token format was found hardcoded in the source code. This type of secret can be used to access cloud services, incurring costs or exposing data.",
+      "file": "fixtures\\sample-vulnerable-server\\config.env",
+      "line": 3,
+      "snippet": "API_KEY=sk-1...cdef",
+      "recommendation": "Move this secret to an environment variable or secrets manager. Load it at runtime via process.env.YOUR_KEY."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "fixtures\\sample-vulnerable-server\\server.ts",
+      "line": 29,
+      "snippet": "httpServer.listen(3000, '0.0.0.0', () => {",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    }
+  ],
+  "score": 63,
+  "grade": "C"
+}
