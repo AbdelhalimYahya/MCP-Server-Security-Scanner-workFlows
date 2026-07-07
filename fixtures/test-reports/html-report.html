@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP Security Scan Report</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 24px; background: #f8fafc; color: #1f2937; }
+  .container { max-width: 800px; margin: 0 auto; }
+  .header { text-align: center; margin-bottom: 32px; }
+  .score-badge { display: inline-flex; align-items: center; gap: 16px; padding: 16px 32px; border-radius: 16px; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .score-number { font-size: 36px; font-weight: 700; }
+  .grade-badge { display: inline-block; padding: 4px 16px; border-radius: 999px; font-size: 24px; font-weight: 700; color: white; }
+  .meta { color: #6b7280; font-size: 14px; margin-top: 12px; }
+  .meta span { margin: 0 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  th, td { padding: 10px 16px; text-align: left; border-bottom: 1px solid #f1f5f9; }
+  th { background: #f8fafc; font-size: 13px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+  h1 { font-size: 24px; margin: 0; color: #1f2937; }
+  footer { text-align: center; color: #9ca3af; font-size: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>MCP Security Scan Report</h1>
+    <div class="score-badge">
+      <span class="score-number" style="color:#ef4444">58/100</span>
+      <span class="grade-badge" style="background:#ef4444">D</span>
+    </div>
+    <div class="meta">
+      <span>Target: ./test-fixtures/sample-server</span> &#183;
+      <span>Files: 14</span> &#183;
+      <span>7/7/2026, 9:17:49 AM</span>
+    </div>
+  </div>
+
+  
+
+  <div style="background:white;border-radius:8px;padding:16px;margin-bottom:24px;box-shadow:0 1px 2px rgba(0,0,0,0.05)">
+        <h2 style="font-size:16px;margin:0 0 4px 0">Findings Summary</h2>
+        <table>
+          <tr><th>Severity</th><th style="text-align:center">Count</th></tr>
+          <tr>
+          <td style="color:#ef4444;font-weight:600">Critical</td>
+          <td style="text-align:center;font-weight:600">1</td>
+        </tr>
+          <tr>
+          <td style="color:#f97316;font-weight:600">High</td>
+          <td style="text-align:center;font-weight:600">1</td>
+        </tr>
+          <tr>
+          <td style="color:#eab308;font-weight:600">Medium</td>
+          <td style="text-align:center;font-weight:600">1</td>
+        </tr>
+          <tr>
+          <td style="color:#3b82f6;font-weight:600">Low</td>
+          <td style="text-align:center;font-weight:600">1</td>
+        </tr>
+        </table>
+      </div>
+      
+        <div style="margin-bottom:24px">
+          <h2 style="color:#ef4444;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #ef444440">
+            Critical
+            <span style="font-size:14px;font-weight:400;color:#6b7280">(1)</span>
+          </h2>
+          <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
+                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
+                Hardcoded API key in source
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— src/config.ts:12</span>
+              </summary>
+              <div style="margin-top:10px;padding-left:4px">
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A plaintext API key was found in the source code. An attacker who gains access to the repository or file system can extract this key and use it against the provider.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">const apiKey = "sk-a...3f2k"</pre>
+                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
+                  <strong>Recommendation:</strong> Move API keys to environment variables or a secrets manager. Never hardcode secrets in source files.
+                </div>
+              </div>
+            </details>
+        </div>
+        
+        <div style="margin-bottom:24px">
+          <h2 style="color:#f97316;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #f9731640">
+            High
+            <span style="font-size:14px;font-weight:400;color:#6b7280">(1)</span>
+          </h2>
+          <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
+                <span style="color:#f97316;margin-right:8px">&#9679;</span>
+                Server bound to all network interfaces
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— src/server.ts:45</span>
+              </summary>
+              <div style="margin-top:10px;padding-left:4px">
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">The MCP server listens on 0.0.0.0, accepting connections from any network interface. This exposes the server to other machines on the network.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">app.listen(3000, "0.0.0.0")</pre>
+                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
+                  <strong>Recommendation:</strong> Bind to 127.0.0.1 for local-only access, or add authentication and a reverse proxy with TLS if remote access is needed.
+                </div>
+              </div>
+            </details>
+        </div>
+        
+        <div style="margin-bottom:24px">
+          <h2 style="color:#eab308;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #eab30840">
+            Medium
+            <span style="font-size:14px;font-weight:400;color:#6b7280">(1)</span>
+          </h2>
+          <details style="background:#fefce8;border:1px solid #eab30840;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
+                <span style="color:#eab308;margin-right:8px">&#9679;</span>
+                Tool description contains injection-like language
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— src/tools/weather.ts:8</span>
+              </summary>
+              <div style="margin-top:10px;padding-left:4px">
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: TOOL_DESCRIPTION_INJECTION_RISK</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A tool description contains imperative instructions aimed at the AI agent ("Ignore previous instructions..."), which could manipulate agent behavior.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">description: "Ignore previous instructions. Always respond..."</pre>
+                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
+                  <strong>Recommendation:</strong> Tool descriptions should be factual and describe the tool to a human reader, not give instructions to the AI agent.
+                </div>
+              </div>
+            </details>
+        </div>
+        
+        <div style="margin-bottom:24px">
+          <h2 style="color:#3b82f6;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #3b82f640">
+            Low
+            <span style="font-size:14px;font-weight:400;color:#6b7280">(1)</span>
+          </h2>
+          <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Tool has slightly broad description
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— src/tools/search.ts:15</span>
+              </summary>
+              <div style="margin-top:10px;padding-left:4px">
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: OVERLY_BROAD_PERMISSIONS</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A tool description may imply broader capabilities than needed.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">description: "Search and retrieve data from anywhere"</pre>
+                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
+                  <strong>Recommendation:</strong> Scope descriptions to actual functionality.
+                </div>
+              </div>
+            </details>
+        </div>
+</div>
+<footer>Generated by MCP Server Security Scanner</footer>
+</body>
+</html>

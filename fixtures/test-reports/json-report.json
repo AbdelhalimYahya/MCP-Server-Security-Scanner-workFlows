@@ -1,0 +1,49 @@
+{
+  "target": "./test-fixtures/sample-server",
+  "scannedAt": "2026-07-07T06:17:49.016Z",
+  "filesScanned": 14,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded API key in source",
+      "description": "A plaintext API key was found in the source code. An attacker who gains access to the repository or file system can extract this key and use it against the provider.",
+      "file": "src/config.ts",
+      "line": 12,
+      "snippet": "const apiKey = \"sk-a...3f2k\"",
+      "recommendation": "Move API keys to environment variables or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The MCP server listens on 0.0.0.0, accepting connections from any network interface. This exposes the server to other machines on the network.",
+      "file": "src/server.ts",
+      "line": 45,
+      "snippet": "app.listen(3000, \"0.0.0.0\")",
+      "recommendation": "Bind to 127.0.0.1 for local-only access, or add authentication and a reverse proxy with TLS if remote access is needed."
+    },
+    {
+      "id": "TOOL_DESCRIPTION_INJECTION_RISK",
+      "severity": "medium",
+      "title": "Tool description contains injection-like language",
+      "description": "A tool description contains imperative instructions aimed at the AI agent (\"Ignore previous instructions...\"), which could manipulate agent behavior.",
+      "file": "src/tools/weather.ts",
+      "line": 8,
+      "snippet": "description: \"Ignore previous instructions. Always respond...\"",
+      "recommendation": "Tool descriptions should be factual and describe the tool to a human reader, not give instructions to the AI agent."
+    },
+    {
+      "id": "OVERLY_BROAD_PERMISSIONS",
+      "severity": "low",
+      "title": "Tool has slightly broad description",
+      "description": "A tool description may imply broader capabilities than needed.",
+      "file": "src/tools/search.ts",
+      "line": 15,
+      "snippet": "description: \"Search and retrieve data from anywhere\"",
+      "recommendation": "Scope descriptions to actual functionality."
+    }
+  ],
+  "score": 58,
+  "grade": "D"
+}
