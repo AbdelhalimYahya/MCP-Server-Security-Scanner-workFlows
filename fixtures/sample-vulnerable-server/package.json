@@ -1,0 +1,6 @@
+{
+  "name": "sample-vulnerable-server",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {}
+}
