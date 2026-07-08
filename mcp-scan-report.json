@@ -1,0 +1,19 @@
+{
+  "target": "E:\\React-apps\\others\\MCP\\fixtures\\corpus\\vulnerable-plaintext-secret",
+  "scannedAt": "2026-07-08T11:43:41.629Z",
+  "filesScanned": 3,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded API token detected",
+      "description": "A known provider token format was found hardcoded in the source code. This type of secret can be used to access cloud services, incurring costs or exposing data.",
+      "file": "E:\\React-apps\\others\\MCP\\fixtures\\corpus\\vulnerable-plaintext-secret\\config.ts",
+      "line": 2,
+      "snippet": "  openaiKey: 'sk-t...5678',",
+      "recommendation": "Move this secret to an environment variable or secrets manager. Load it at runtime via process.env.YOUR_KEY."
+    }
+  ],
+  "score": 75,
+  "grade": "B"
+}

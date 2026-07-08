@@ -25,13 +25,13 @@
   <div class="header">
     <h1>MCP Security Scan Report</h1>
     <div class="score-badge">
-      <span class="score-number" style="color:#ef4444">0/100</span>
-      <span class="grade-badge" style="background:#ef4444">F</span>
+      <span class="score-number" style="color:#22c55e">90/100</span>
+      <span class="grade-badge" style="background:#22c55e">A</span>
     </div>
     <div class="meta">
-      <span>Target: C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk</span> &#183;
-      <span>Files: 164</span> &#183;
-      <span>7/8/2026, 2:25:32 PM</span>
+      <span>Target: C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT</span> &#183;
+      <span>Files: 70</span> &#183;
+      <span>7/8/2026, 2:44:05 PM</span>
     </div>
   </div>
 
@@ -42,400 +42,329 @@
         <table>
           <tr><th>Severity</th><th style="text-align:center">Count</th></tr>
           <tr>
-          <td style="color:#ef4444;font-weight:600">Critical</td>
-          <td style="text-align:center;font-weight:600">18</td>
-        </tr>
-          <tr>
-          <td style="color:#f97316;font-weight:600">High</td>
-          <td style="text-align:center;font-weight:600">7</td>
+          <td style="color:#3b82f6;font-weight:600">Low</td>
+          <td style="text-align:center;font-weight:600">21</td>
         </tr>
         </table>
       </div>
       
         <div style="margin-bottom:24px">
-          <h2 style="color:#ef4444;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #ef444440">
-            Critical
-            <span style="font-size:14px;font-weight:400;color:#6b7280">(18)</span>
+          <h2 style="color:#3b82f6;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #3b82f640">
+            Low
+            <span style="font-size:14px;font-weight:400;color:#6b7280">(21)</span>
           </h2>
-          <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+          <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\examples\oauth-simple-example.ts:17</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.extra-authorization-params.test.ts:26</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">  clientSecret: "your...cret", // Optional for public clients</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (upst...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">  upstreamClientSecret: "upst...cret",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\providers\oauth.test.ts:139</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.open-redirect.test.ts:52</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'intr...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (UP_A...OKEN). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    accessToken: "UP_A...OKEN",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\providers\oauth.test.ts:167</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.open-redirect.test.ts:55</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'intr...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (UP_R...OKEN). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    refreshToken: "UP_R...OKEN",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:28</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-parsing.test.ts:12</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (upst...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    upstreamClientSecret: "upst...cret",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:52</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-parsing.test.ts:354</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (mini...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">          access_token: "mini...oken",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:68</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:67</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'unkn...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (upst...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    upstreamClientSecret: "upst...cret",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:77</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:92</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (upst...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">        accessToken: "upst...oken",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:96</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:95</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (upst...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">        refreshToken: "upst...oken",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:115</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:280</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (inva...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const invalidToken = "inva...oken";</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:133</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:321</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (upst...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">        idToken: "upst...oken",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:154</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:431</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (secr...hars). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    const clientSecret = "secr...hars";</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:172</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:831</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (init...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      accessToken: "init...oken",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:191</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\OAuthProxy.token-swap.test.ts:834</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (init...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      refreshToken: "init...oken",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:212</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\providers\AuthProvider.test.ts:96</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (gith...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    clientSecret: "gith...cret",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:245</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\providers\AuthProvider.test.ts:139</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (goog...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    clientSecret: "goog...cret",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\introspection-validator.test.ts:269</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\providers\AuthProvider.test.ts:179</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const token = 'test...oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (azur...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    clientSecret: "azur...cret",</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\auth\validators\jwt-validator.test.ts:79</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\utils\jwtIssuer.test.ts:90</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const malformedToken = 'not....oken';</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (${he...ture). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const tamperedToken = `${he...ture`;</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fef2f2;border:1px solid #ef444440;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#ef4444;margin-right:8px">&#9679;</span>
-                Hardcoded credential assignment
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\compat\ticket-018-serverless-bc-auth.test.ts:350</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\utils\jwtIssuer.test.ts:115</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
                 <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">    const authData = { token: 'bear...-123', user: { id: 'u1' } };</pre>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (${he...ure}). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const tamperedToken = `${he...ure}`;</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-        </div>
-        
-        <div style="margin-bottom:24px">
-          <h2 style="color:#f97316;font-size:18px;margin:0 0 10px 0;padding-bottom:6px;border-bottom:2px solid #f9731640">
-            High
-            <span style="font-size:14px;font-weight:400;color:#6b7280">(7)</span>
-          </h2>
-          <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#f97316;margin-right:8px">&#9679;</span>
-                Server bound to all network interfaces
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\compat\ticket-018-serverless-bc-exports.test.ts:212</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\auth\utils\tokenStore.test.ts:100</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
-                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">host: '0.0.0.0',</pre>
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (sens...data). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">      const value = { number: 42, secret: "sens...data" };</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>
-            <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#f97316;margin-right:8px">&#9679;</span>
-                Server bound to all network interfaces
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\compat\ticket-018-serverless-bc-exports.test.ts:217</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Example file contains potential secret
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\examples\oauth-jwks-example.ts:29</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
-                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">host: '0.0.0.0',</pre>
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">This file appears to be an example/template, but it contains a real-looking secret (eyJh...s...). Example files should use placeholder values like "your-api-key-here" — never real credentials.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">  const token = "eyJh...s...";</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
+                  <strong>Recommendation:</strong> Replace the secret value with a placeholder like "your-api-key-here".
                 </div>
               </div>
             </details>
-            <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
+            <details style="background:#eff6ff;border:1px solid #3b82f640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
               <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#f97316;margin-right:8px">&#9679;</span>
-                Server bound to all network interfaces
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\core\multi-transport-config.test.ts:67</span>
+                <span style="color:#3b82f6;margin-right:8px">&#9679;</span>
+                Test file contains hardcoded credential
+                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-WaC3gT\src\FastMCP.test.ts:3909</span>
               </summary>
               <div style="margin-top:10px;padding-left:4px">
-                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">options: { port: 4000, host: '0.0.0.0' },</pre>
+                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: PLAINTEXT_SECRET</div>
+                <p style="color:#4b5563;font-size:14px;margin:4px 0">A hardcoded credential found in a test file (vali...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.</p>
+                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">  const VALID_TOKEN = "vali...oken";</pre>
                 <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
-                </div>
-              </div>
-            </details>
-            <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
-              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#f97316;margin-right:8px">&#9679;</span>
-                Server bound to all network interfaces
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\transports\host-binding.test.ts:28</span>
-              </summary>
-              <div style="margin-top:10px;padding-left:4px">
-                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">it('should accept explicit host 0.0.0.0', async () => {</pre>
-                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
-                </div>
-              </div>
-            </details>
-            <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
-              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#f97316;margin-right:8px">&#9679;</span>
-                Server bound to all network interfaces
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\transports\host-binding.test.ts:30</span>
-              </summary>
-              <div style="margin-top:10px;padding-left:4px">
-                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">transport = new HttpStreamTransport({ port, host: '0.0.0.0' });</pre>
-                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
-                </div>
-              </div>
-            </details>
-            <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
-              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#f97316;margin-right:8px">&#9679;</span>
-                Server bound to all network interfaces
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\transports\host-binding.test.ts:62</span>
-              </summary>
-              <div style="margin-top:10px;padding-left:4px">
-                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">it('should accept explicit host 0.0.0.0', async () => {</pre>
-                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
-                </div>
-              </div>
-            </details>
-            <details style="background:#fff7ed;border:1px solid #f9731640;border-radius:8px;padding:12px 16px;margin-bottom:8px">
-              <summary style="cursor:pointer;font-weight:600;color:#1f2937;font-size:14px">
-                <span style="color:#f97316;margin-right:8px">&#9679;</span>
-                Server bound to all network interfaces
-                <span style="color:#6b7280;font-weight:400;font-size:13px;margin-left:8px">— C:\Users\Lenovo\AppData\Local\Temp\mcp-scan-QdwRWk\tests\transports\host-binding.test.ts:64</span>
-              </summary>
-              <div style="margin-top:10px;padding-left:4px">
-                <div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Rule: INSECURE_NETWORK_BINDING</div>
-                <p style="color:#4b5563;font-size:14px;margin:4px 0">The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.</p>
-                <pre style="background:#1f2937;color:#e5e7eb;padding:10px 14px;border-radius:6px;font-size:13px;overflow-x:auto;margin:8px 0">transport = new SSEServerTransport({ port, host: '0.0.0.0' });</pre>
-                <div style="margin-top:8px;padding:10px 14px;background:#f0fdf4;border-left:4px solid #22c55e;border-radius:4px;font-size:13px;color:#166534">
-                  <strong>Recommendation:</strong> For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS.
+                  <strong>Recommendation:</strong> Consider using environment variables or test helpers to generate test credentials.
                 </div>
               </div>
             </details>

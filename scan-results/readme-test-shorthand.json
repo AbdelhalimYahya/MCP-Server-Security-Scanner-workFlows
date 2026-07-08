@@ -1,0 +1,219 @@
+{
+  "target": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT",
+  "scannedAt": "2026-07-08T11:44:05.747Z",
+  "filesScanned": 70,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (upst...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.extra-authorization-params.test.ts",
+      "line": 26,
+      "snippet": "  upstreamClientSecret: \"upst...cret\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (UP_A...OKEN). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.open-redirect.test.ts",
+      "line": 52,
+      "snippet": "    accessToken: \"UP_A...OKEN\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (UP_R...OKEN). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.open-redirect.test.ts",
+      "line": 55,
+      "snippet": "    refreshToken: \"UP_R...OKEN\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (upst...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 12,
+      "snippet": "    upstreamClientSecret: \"upst...cret\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (mini...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 354,
+      "snippet": "          access_token: \"mini...oken\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (upst...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 67,
+      "snippet": "    upstreamClientSecret: \"upst...cret\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (upst...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 92,
+      "snippet": "        accessToken: \"upst...oken\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (upst...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 95,
+      "snippet": "        refreshToken: \"upst...oken\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (inva...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 280,
+      "snippet": "      const invalidToken = \"inva...oken\";\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (upst...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 321,
+      "snippet": "        idToken: \"upst...oken\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (secr...hars). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 431,
+      "snippet": "    const clientSecret = \"secr...hars\";\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (init...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 831,
+      "snippet": "      accessToken: \"init...oken\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (init...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 834,
+      "snippet": "      refreshToken: \"init...oken\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (gith...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\providers\\AuthProvider.test.ts",
+      "line": 96,
+      "snippet": "    clientSecret: \"gith...cret\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (goog...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\providers\\AuthProvider.test.ts",
+      "line": 139,
+      "snippet": "    clientSecret: \"goog...cret\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (azur...cret). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\providers\\AuthProvider.test.ts",
+      "line": 179,
+      "snippet": "    clientSecret: \"azur...cret\",\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (${he...ture). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\utils\\jwtIssuer.test.ts",
+      "line": 90,
+      "snippet": "      const tamperedToken = `${he...ture`;\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (${he...ure}). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\utils\\jwtIssuer.test.ts",
+      "line": 115,
+      "snippet": "      const tamperedToken = `${he...ure}`;\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (sens...data). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\auth\\utils\\tokenStore.test.ts",
+      "line": 100,
+      "snippet": "      const value = { number: 42, secret: \"sens...data\" };\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Example file contains potential secret",
+      "description": "This file appears to be an example/template, but it contains a real-looking secret (eyJh...s...). Example files should use placeholder values like \"your-api-key-here\" — never real credentials.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\examples\\oauth-jwks-example.ts",
+      "line": 29,
+      "snippet": "  const token = \"eyJh...s...\";\r",
+      "recommendation": "Replace the secret value with a placeholder like \"your-api-key-here\"."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (vali...oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WaC3gT\\src\\FastMCP.test.ts",
+      "line": 3909,
+      "snippet": "  const VALID_TOKEN = \"vali...oken\";\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    }
+  ],
+  "score": 90,
+  "grade": "A"
+}
