@@ -14,6 +14,94 @@ npx mcp-scan scan owner/repo --quiet --json report.json
 
 No installation required. Works on local folders and public GitHub repos.
 
+## How to Use
+
+### Step 1 — Run your first scan
+
+Point the scanner at any MCP server directory:
+
+```bash
+npx mcp-scan scan ./my-mcp-server
+```
+
+That's it. The scanner walks every source and config file, runs all detection rules, and prints a color-coded report to your terminal.
+
+### Step 2 — Understand the report
+
+The terminal output shows:
+
+1. **Score and grade** — a single number (0-100) and letter grade (A-F). A score below 90 means issues were found.
+2. **Findings summary** — a table counting how many issues were found at each severity level.
+3. **Per-finding details** — grouped by severity (critical first). Each entry shows the exact file and line, what the problem is, and how to fix it.
+
+If no issues are found, you'll see a clean bill of health:
+
+```
+  Score:  100/100   A
+
+  ✓ No security issues found!
+    Your MCP server looks clean.
+```
+
+### Step 3 — Scan a GitHub repo (no clone needed)
+
+Pass a GitHub URL or `owner/repo` shorthand:
+
+```bash
+npx mcp-scan scan https://github.com/owner/mcp-server
+npx mcp-scan scan owner/mcp-server
+```
+
+The tool clones the repo (shallow, depth 1), scans it, and cleans up the temp directory automatically.
+
+### Step 4 — Save a JSON or HTML report
+
+Generate a shareable report alongside terminal output:
+
+```bash
+npx mcp-scan scan ./my-server --json report.json --html report.html
+```
+
+- The **JSON report** contains the full `ScanResult` data — useful for CI pipelines or further analysis.
+- The **HTML report** is a self-contained webpage with inline CSS (no external dependencies). Open it in any browser to see a styled version of the scan results.
+
+Skip the HTML report if you don't need it:
+
+```bash
+npx mcp-scan scan ./my-server --json report.json --no-html
+```
+
+### Step 5 — Filter output by severity
+
+Only show findings at or above a certain severity:
+
+```bash
+npx mcp-scan scan ./my-server --min-severity high
+```
+
+This filters the terminal output but the JSON/HTML reports still include everything.
+
+### Step 6 — Use quiet mode for scripts
+
+Suppress all terminal output and just write the report files:
+
+```bash
+npx mcp-scan scan ./my-server --quiet --json ci-report.json
+```
+
+Useful for CI/CD pipelines where you only care about the JSON result.
+
+### Step 7 — Review findings and fix them
+
+Each finding includes a plain-English fix recommendation. Typical fixes:
+
+- **Plaintext secret** → Move it to an environment variable or secrets manager.
+- **Insecure binding** → Change `0.0.0.0` to `127.0.0.1`.
+- **Missing auth** → Add a bearer token or API key check.
+- **Broad permissions** → Scope file paths to a base directory, or restrict shell commands to an allowlist.
+
+After fixing, re-run the scan to confirm the issue is resolved.
+
 ## What It Checks
 
 | Check | What It Finds | Severity |
