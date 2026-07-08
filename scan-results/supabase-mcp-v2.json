@@ -1,0 +1,19 @@
+{
+  "target": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-rkCbgz",
+  "scannedAt": "2026-07-08T11:29:04.431Z",
+  "filesScanned": 95,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (sb_p...ey_1). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-rkCbgz\\packages\\mcp-server-supabase\\test\\mocks.ts",
+      "line": 281,
+      "snippet": "        api_key: 'sb_p...ey_1',\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    }
+  ],
+  "score": 98,
+  "grade": "A"
+}

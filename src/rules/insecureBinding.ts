@@ -1,9 +1,7 @@
 import type { Rule, Finding } from '../types.js';
 
-const BINDING_KEYWORDS = /\b(listen|bind|host|address)\b/i;
-
 const ALL_INTERFACES_IPV4 = /0\.0\.0\.0/;
-const ALL_INTERFACES_IPV6 = /["']::["']/;
+const ALL_INTERFACES_IPV6 = /::/;
 
 const LOCALHOST_PATTERNS = [
   /127\.0\.0\.1/,
@@ -24,6 +22,23 @@ const AUTH_KEYWORDS = [
   /\bapi[_-]?key\b/i,
 ];
 
+function isTestFile(filePath: string): boolean {
+  return /\.test\.(ts|js)$|\.spec\.(ts|js)$|[/\\]tests?[/\\]/.test(filePath);
+}
+
+function isRealBinding(line: string): boolean {
+  if (/['"]0\.0\.0\.0['"]/.test(line) && /['"]host['"]\s*[:=]/.test(line)) return false;
+  const bindingV4Pattern = /(?:^|[,{;\s])(?:host|listen|bind|address)\s*(?::|=)\s*["']0\.0\.0\.0["']/i;
+  if (bindingV4Pattern.test(line)) return true;
+  const bindingV6Pattern = /(?:^|[,{;\s])(?:host|listen|bind|address)\s*(?::|=)\s*["']::["']/i;
+  if (bindingV6Pattern.test(line)) return true;
+  const listenPattern = /\.listen\s*\([^)]*["'](?:0\.0\.0\.0|::)["']/;
+  if (listenPattern.test(line)) return true;
+  const envPattern = /^HOST=0\.0\.0\.0$/m;
+  if (envPattern.test(line)) return true;
+  return false;
+}
+
 export const insecureBindingRule: Rule = {
   id: 'INSECURE_NETWORK_BINDING',
   name: 'Insecure Network Binding',
@@ -31,6 +46,8 @@ export const insecureBindingRule: Rule = {
 
   check(fileContent: string, filePath: string): Finding[] {
     const findings: Finding[] = [];
+    if (isTestFile(filePath)) return findings;
+
     const lines = fileContent.split('\n');
 
     for (let i = 0; i < lines.length; i++) {
@@ -42,10 +59,9 @@ export const insecureBindingRule: Rule = {
       const isLocalhostAlso = LOCALHOST_PATTERNS.some((p) => p.test(line));
       if (isLocalhostAlso) continue;
 
-      const hasBindingKeyword = BINDING_KEYWORDS.test(line);
-      if (!hasBindingKeyword) continue;
+      if (!isRealBinding(line)) continue;
 
-      const address = ALL_INTERFACES_IPV6.test(line) ? '::' : '0.0.0.0';
+      const address = ALL_INTERFACES_IPV6.test(line) && !ALL_INTERFACES_IPV4.test(line) ? '::' : '0.0.0.0';
       findings.push({
         id: this.id,
         severity: 'high',

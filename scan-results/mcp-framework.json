@@ -1,0 +1,259 @@
+{
+  "target": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk",
+  "scannedAt": "2026-07-08T11:25:32.193Z",
+  "filesScanned": 164,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\examples\\oauth-simple-example.ts",
+      "line": 17,
+      "snippet": "  clientSecret: \"your...cret\", // Optional for public clients\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\providers\\oauth.test.ts",
+      "line": 139,
+      "snippet": "      const token = 'intr...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\providers\\oauth.test.ts",
+      "line": 167,
+      "snippet": "      const token = 'intr...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 28,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 52,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 68,
+      "snippet": "      const token = 'unkn...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 77,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 96,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 115,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 133,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 154,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 172,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 191,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 212,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 245,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\introspection-validator.test.ts",
+      "line": 269,
+      "snippet": "      const token = 'test...oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\auth\\validators\\jwt-validator.test.ts",
+      "line": 79,
+      "snippet": "      const malformedToken = 'not....oken';\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\compat\\ticket-018-serverless-bc-auth.test.ts",
+      "line": 350,
+      "snippet": "    const authData = { token: 'bear...-123', user: { id: 'u1' } };\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\compat\\ticket-018-serverless-bc-exports.test.ts",
+      "line": 212,
+      "snippet": "host: '0.0.0.0',",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\compat\\ticket-018-serverless-bc-exports.test.ts",
+      "line": 217,
+      "snippet": "host: '0.0.0.0',",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\core\\multi-transport-config.test.ts",
+      "line": 67,
+      "snippet": "options: { port: 4000, host: '0.0.0.0' },",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\transports\\host-binding.test.ts",
+      "line": 28,
+      "snippet": "it('should accept explicit host 0.0.0.0', async () => {",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\transports\\host-binding.test.ts",
+      "line": 30,
+      "snippet": "transport = new HttpStreamTransport({ port, host: '0.0.0.0' });",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\transports\\host-binding.test.ts",
+      "line": 62,
+      "snippet": "it('should accept explicit host 0.0.0.0', async () => {",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-QdwRWk\\tests\\transports\\host-binding.test.ts",
+      "line": 64,
+      "snippet": "transport = new SSEServerTransport({ port, host: '0.0.0.0' });",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    }
+  ],
+  "score": 0,
+  "grade": "F"
+}

@@ -1,0 +1,19 @@
+{
+  "target": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-ehizwN",
+  "scannedAt": "2026-07-08T11:29:04.922Z",
+  "filesScanned": 13,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Example file contains potential secret",
+      "description": "This file appears to be an example/template, but it contains a real-looking secret (Test...123!). Example files should use placeholder values like \"your-api-key-here\" — never real credentials.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-ehizwN\\test-mcp-server.example.js",
+      "line": 127,
+      "snippet": "      password: 'Test...123!',\r",
+      "recommendation": "Replace the secret value with a placeholder like \"your-api-key-here\"."
+    }
+  ],
+  "score": 98,
+  "grade": "A"
+}

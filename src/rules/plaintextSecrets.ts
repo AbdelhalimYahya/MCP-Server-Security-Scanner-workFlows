@@ -1,6 +1,34 @@
-import type { Rule, Finding } from '../types.js';
+import type { Rule, Finding, Severity } from '../types.js';
 
-const EXAMPLE_FILE_PATTERNS = [/\.env\.example$/, /\.env\.sample$/];
+const EXEMPT_FILE_PATTERNS = [
+  /\.env\.example$/,
+  /\.env\.sample$/,
+  /\.example\./,
+  /[/\\]examples[/\\]/,
+  /\.test\.ts$/,
+  /\.spec\.ts$/,
+  /\bmocks?\.[jt]s$/,
+];
+
+const PLACEHOLDER_PREFIXES = [
+  'your-', 'your_',
+  'test-', 'test_',
+  'dummy-', 'dummy_',
+  'placeholder-', 'placeholder_',
+  'example-', 'example_',
+  'fake-', 'fake_',
+  'invalid-', 'invalid_',
+  'legit-', 'legit_',
+  'mini-', 'mini_',
+  'expired-', 'expired_',
+  'unknown-', 'unknown_',
+  'tampered-', 'tampered_',
+  'introspection-', 'introspection_',
+  'rotated-',
+  'second-',
+  'new-',
+  'init-',
+];
 
 const KNOWN_TOKEN_PATTERNS: { regex: RegExp; label: string }[] = [
   { regex: /AKIA[0-9A-Z]{16}/, label: 'AWS Access Key' },
@@ -38,8 +66,28 @@ function redact(value: string): string {
   return value.slice(0, 4) + '...' + value.slice(-4);
 }
 
-function isExampleFile(filePath: string): boolean {
-  return EXAMPLE_FILE_PATTERNS.some((p) => p.test(filePath));
+function isExemptFile(filePath: string): 'test' | 'example' | null {
+  if (/[/\\]tests?[/\\]/.test(filePath)) return 'test';
+  const m = EXEMPT_FILE_PATTERNS.some((p) => p.test(filePath));
+  if (m) {
+    if (/\.test\.ts$|\.spec\.ts$|\bmocks?\.[jt]s$/.test(filePath)) return 'test';
+    return 'example';
+  }
+  return null;
+}
+
+const PLACEHOLDER_RE = new RegExp(`^(${PLACEHOLDER_PREFIXES.join('|')})`, 'i');
+
+function isPlaceholderValue(val: string): boolean {
+  if (/^env\(/.test(val)) return true;
+  if (PLACEHOLDER_RE.test(val)) return true;
+  return false;
+}
+
+function capSeverity(exemptType: 'test' | 'example' | null, original: Severity): Severity {
+  if (exemptType === 'test') return 'low';
+  if (exemptType === 'example') return 'low';
+  return original;
 }
 
 interface MatchResult {
@@ -96,7 +144,7 @@ export const plaintextSecretsRule: Rule = {
   severity: 'critical',
 
   check(fileContent: string, filePath: string): Finding[] {
-    const isExample = isExampleFile(filePath);
+    const exemptType = isExemptFile(filePath);
     const lines = fileContent.split('\n');
     const matchedValues = new Set<string>();
     const findings: Finding[] = [];
@@ -104,14 +152,20 @@ export const plaintextSecretsRule: Rule = {
     for (let i = 0; i < lines.length; i++) {
       const matches = scanLine(lines[i], i, matchedValues);
       for (const m of matches) {
-        const severity = isExample ? 'low' : 'critical';
+        if (isPlaceholderValue(m.rawValue)) continue;
+
+        const severity = capSeverity(exemptType, 'critical');
         const lineContent = m.lineContent.replace(m.rawValue, redact(m.rawValue));
 
         let title: string;
         let description: string;
         let recommendation: string;
 
-        if (isExample) {
+        if (exemptType === 'test') {
+          title = 'Test file contains hardcoded credential';
+          description = `A hardcoded credential found in a test file (${redact(m.rawValue)}). This is unlikely to be a production secret, but test values should still use env vars for consistency.`;
+          recommendation = 'Consider using environment variables or test helpers to generate test credentials.';
+        } else if (exemptType === 'example') {
           title = 'Example file contains potential secret';
           description = `This file appears to be an example/template, but it contains a real-looking secret (${redact(m.rawValue)}). Example files should use placeholder values like "your-api-key-here" — never real credentials.`;
           recommendation = 'Replace the secret value with a placeholder like "your-api-key-here".';

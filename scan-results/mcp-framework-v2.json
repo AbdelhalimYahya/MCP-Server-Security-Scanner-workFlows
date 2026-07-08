@@ -1,0 +1,29 @@
+{
+  "target": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-sK2v0G",
+  "scannedAt": "2026-07-08T11:29:06.547Z",
+  "filesScanned": 164,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (not....oken). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-sK2v0G\\tests\\auth\\validators\\jwt-validator.test.ts",
+      "line": 79,
+      "snippet": "      const malformedToken = 'not....oken';\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "low",
+      "title": "Test file contains hardcoded credential",
+      "description": "A hardcoded credential found in a test file (bear...-123). This is unlikely to be a production secret, but test values should still use env vars for consistency.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-sK2v0G\\tests\\compat\\ticket-018-serverless-bc-auth.test.ts",
+      "line": 350,
+      "snippet": "    const authData = { token: 'bear...-123', user: { id: 'u1' } };\r",
+      "recommendation": "Consider using environment variables or test helpers to generate test credentials."
+    }
+  ],
+  "score": 96,
+  "grade": "A"
+}

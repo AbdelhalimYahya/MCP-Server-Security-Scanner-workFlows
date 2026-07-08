@@ -1,0 +1,429 @@
+{
+  "target": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL",
+  "scannedAt": "2026-07-08T11:24:58.669Z",
+  "filesScanned": 70,
+  "findings": [
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.extra-authorization-params.test.ts",
+      "line": 26,
+      "snippet": "  upstreamClientSecret: \"upst...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.open-redirect.test.ts",
+      "line": 31,
+      "snippet": "  upstreamClientSecret: \"legi...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.open-redirect.test.ts",
+      "line": 52,
+      "snippet": "    accessToken: \"UP_A...OKEN\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.open-redirect.test.ts",
+      "line": 55,
+      "snippet": "    refreshToken: \"UP_R...OKEN\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 12,
+      "snippet": "    upstreamClientSecret: \"upst...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 22,
+      "snippet": "          access_token: \"test...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 24,
+      "snippet": "          id_token: \"test...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 25,
+      "snippet": "          refresh_token: \"test...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 354,
+      "snippet": "          access_token: \"mini...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 441,
+      "snippet": "            refresh_token: \"test...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-parsing.test.ts",
+      "line": 478,
+      "snippet": "            refresh_token: \"expi...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 67,
+      "snippet": "    upstreamClientSecret: \"upst...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 92,
+      "snippet": "        accessToken: \"upst...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 95,
+      "snippet": "        refreshToken: \"upst...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 280,
+      "snippet": "      const invalidToken = \"inva...oken\";\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 321,
+      "snippet": "        idToken: \"upst...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 396,
+      "snippet": "          access_token: \"test...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 398,
+      "snippet": "          refresh_token: \"test...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 431,
+      "snippet": "    const clientSecret = \"secr...hars\";\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 807,
+      "snippet": "            access_token: \"new-...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 809,
+      "snippet": "            refresh_token: \"new-...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 831,
+      "snippet": "      accessToken: \"init...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 834,
+      "snippet": "      refreshToken: \"init...oken\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 1080,
+      "snippet": "          access_token: \"rota...cess\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 1082,
+      "snippet": "          refresh_token: \"rota...resh\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 1106,
+      "snippet": "          access_token: \"seco...cess\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 1108,
+      "snippet": "          refresh_token: \"seco...resh\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 1145,
+      "snippet": "          access_token: \"new-...cess\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\OAuthProxy.token-swap.test.ts",
+      "line": 1147,
+      "snippet": "          refresh_token: \"new-...resh\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\providers\\AuthProvider.test.ts",
+      "line": 15,
+      "snippet": "    clientSecret: \"test...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\providers\\AuthProvider.test.ts",
+      "line": 96,
+      "snippet": "    clientSecret: \"gith...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\providers\\AuthProvider.test.ts",
+      "line": 139,
+      "snippet": "    clientSecret: \"goog...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\providers\\AuthProvider.test.ts",
+      "line": 179,
+      "snippet": "    clientSecret: \"azur...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\utils\\jwtIssuer.test.ts",
+      "line": 90,
+      "snippet": "      const tamperedToken = `${he...ture`;\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\utils\\jwtIssuer.test.ts",
+      "line": 115,
+      "snippet": "      const tamperedToken = `${he...ure}`;\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\auth\\utils\\tokenStore.test.ts",
+      "line": 100,
+      "snippet": "      const value = { number: 42, secret: \"sens...data\" };\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\examples\\oauth-jwks-example.ts",
+      "line": 29,
+      "snippet": "  const token = \"eyJh...s...\";\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\FastMCP.oauth-proxy.test.ts",
+      "line": 23,
+      "snippet": "      upstreamClientSecret: \"test...cret\",\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\FastMCP.test.ts",
+      "line": 3909,
+      "snippet": "  const VALID_TOKEN = \"vali...oken\";\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\FastMCP.test.ts",
+      "line": 3910,
+      "snippet": "  const INVALID_TOKEN = \"inva...oken\";\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\FastMCP.test.ts",
+      "line": 4572,
+      "snippet": "test(\"host configuration works with 0.0.0.0\", async () => {",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-Ak47PL\\src\\FastMCP.test.ts",
+      "line": 4582,
+      "snippet": "host: \"0.0.0.0\",",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    }
+  ],
+  "score": 0,
+  "grade": "F"
+}

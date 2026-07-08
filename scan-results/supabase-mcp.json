@@ -1,0 +1,69 @@
+{
+  "target": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WzuUnN",
+  "scannedAt": "2026-07-08T11:24:58.269Z",
+  "filesScanned": 95,
+  "findings": [
+    {
+      "id": "INSECURE_NETWORK_BINDING",
+      "severity": "high",
+      "title": "Server bound to all network interfaces",
+      "description": "The server is configured to listen on all network interfaces (0.0.0.0), making it accessible from any machine that can reach this host. This exposes the MCP server to the local network and potentially the internet.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WzuUnN\\packages\\mcp-server-postgrest\\src\\server.test.ts",
+      "line": 157,
+      "snippet": "\"text\": \"{\"swagger\":\"2.0\",\"info\":{\"description\":\"\",\"title\":\"standard public schema\",\"version\":\"12.2.0 (ec89f6b)\"},\"host\":\"0.0.0.0:3000\",\"basePath\":\"/\",\"schemes\":[\"http\"],\"consumes\":[\"application/json\",\"application/vnd.pgrst.object+json;nulls=stripped\",\"application/vnd.pgrst.object+json\",\"text/csv\"],\"produces\":[\"application/json\",\"application/vnd.pgrst.object+json;nulls=stripped\",\"application/vnd.pgrst.object+json\",\"text/csv\"],\"paths\":{\"/\":{\"get\":{\"produces\":[\"application/openapi+json\",\"application/json\"],\"responses\":{\"200\":{\"description\":\"OK\"}},\"summary\":\"OpenAPI description (this document)\",\"tags\":[\"Introspection\"]}},\"/todos\":{\"get\":{\"parameters\":[{\"$ref\":\"#/parameters/rowFilter.todos.id\"},{\"$ref\":\"#/parameters/rowFilter.todos.title\"},{\"$ref\":\"#/parameters/rowFilter.todos.description\"},{\"$ref\":\"#/parameters/rowFilter.todos.due_date\"},{\"$ref\":\"#/parameters/rowFilter.todos.is_completed\"},{\"$ref\":\"#/parameters/rowFilter.todos.user_id\"},{\"$ref\":\"#/parameters/select\"},{\"$ref\":\"#/parameters/order\"},{\"$ref\":\"#/parameters/range\"},{\"$ref\":\"#/parameters/rangeUnit\"},{\"$ref\":\"#/parameters/offset\"},{\"$ref\":\"#/parameters/limit\"},{\"$ref\":\"#/parameters/preferCount\"}],\"responses\":{\"200\":{\"description\":\"OK\",\"schema\":{\"items\":{\"$ref\":\"#/definitions/todos\"},\"type\":\"array\"}},\"206\":{\"description\":\"Partial Content\"}},\"summary\":\"Table to manage todo items with details such as title, description, due date, and completion status.\",\"tags\":[\"todos\"]},\"post\":{\"parameters\":[{\"$ref\":\"#/parameters/body.todos\"},{\"$ref\":\"#/parameters/select\"},{\"$ref\":\"#/parameters/preferPost\"}],\"responses\":{\"201\":{\"description\":\"Created\"}},\"summary\":\"Table to manage todo items with details such as title, description, due date, and completion status.\",\"tags\":[\"todos\"]},\"delete\":{\"parameters\":[{\"$ref\":\"#/parameters/rowFilter.todos.id\"},{\"$ref\":\"#/parameters/rowFilter.todos.title\"},{\"$ref\":\"#/parameters/rowFilter.todos.description\"},{\"$ref\":\"#/parameters/rowFilter.todos.due_date\"},{\"$ref\":\"#/parameters/rowFilter.todos.is_completed\"},{\"$ref\":\"#/parameters/rowFilter.todos.user_id\"},{\"$ref\":\"#/parameters/preferReturn\"}],\"responses\":{\"204\":{\"description\":\"No Content\"}},\"summary\":\"Table to manage todo items with details such as title, description, due date, and completion status.\",\"tags\":[\"todos\"]},\"patch\":{\"parameters\":[{\"$ref\":\"#/parameters/rowFilter.todos.id\"},{\"$ref\":\"#/parameters/rowFilter.todos.title\"},{\"$ref\":\"#/parameters/rowFilter.todos.description\"},{\"$ref\":\"#/parameters/rowFilter.todos.due_date\"},{\"$ref\":\"#/parameters/rowFilter.todos.is_completed\"},{\"$ref\":\"#/parameters/rowFilter.todos.user_id\"},{\"$ref\":\"#/parameters/body.todos\"},{\"$ref\":\"#/parameters/preferReturn\"}],\"responses\":{\"204\":{\"description\":\"No Content\"}},\"summary\":\"Table to manage todo items with details such as title, description, due date, and completion status.\",\"tags\":[\"todos\"]}}},\"definitions\":{\"todos\":{\"description\":\"Table to manage todo items with details such as title, description, due date, and completion status.\",\"required\":[\"id\",\"title\",\"user_id\"],\"properties\":{\"id\":{\"description\":\"Note:\\\\nThis is a Primary Key.<pk/>\",\"format\":\"bigint\",\"type\":\"integer\"},\"title\":{\"format\":\"text\",\"type\":\"string\"},\"description\":{\"format\":\"text\",\"type\":\"string\"},\"due_date\":{\"format\":\"date\",\"type\":\"string\"},\"is_completed\":{\"default\":false,\"format\":\"boolean\",\"type\":\"boolean\"},\"user_id\":{\"default\":\"auth.uid()\",\"format\":\"uuid\",\"type\":\"string\"}},\"type\":\"object\"}},\"parameters\":{\"preferParams\":{\"name\":\"Prefer\",\"description\":\"Preference\",\"required\":false,\"enum\":[\"params=single-object\"],\"in\":\"header\",\"type\":\"string\"},\"preferReturn\":{\"name\":\"Prefer\",\"description\":\"Preference\",\"required\":false,\"enum\":[\"return=representation\",\"return=minimal\",\"return=none\"],\"in\":\"header\",\"type\":\"string\"},\"preferCount\":{\"name\":\"Prefer\",\"description\":\"Preference\",\"required\":false,\"enum\":[\"count=none\"],\"in\":\"header\",\"type\":\"string\"},\"preferPost\":{\"name\":\"Prefer\",\"description\":\"Preference\",\"required\":false,\"enum\":[\"return=representation\",\"return=minimal\",\"return=none\",\"resolution=ignore-duplicates\",\"resolution=merge-duplicates\"],\"in\":\"header\",\"type\":\"string\"},\"select\":{\"name\":\"select\",\"description\":\"Filtering Columns\",\"required\":false,\"in\":\"query\",\"type\":\"string\"},\"on_conflict\":{\"name\":\"on_conflict\",\"description\":\"On Conflict\",\"required\":false,\"in\":\"query\",\"type\":\"string\"},\"order\":{\"name\":\"order\",\"description\":\"Ordering\",\"required\":false,\"in\":\"query\",\"type\":\"string\"},\"range\":{\"name\":\"Range\",\"description\":\"Limiting and Pagination\",\"required\":false,\"in\":\"header\",\"type\":\"string\"},\"rangeUnit\":{\"name\":\"Range-Unit\",\"description\":\"Limiting and Pagination\",\"required\":false,\"default\":\"items\",\"in\":\"header\",\"type\":\"string\"},\"offset\":{\"name\":\"offset\",\"description\":\"Limiting and Pagination\",\"required\":false,\"in\":\"query\",\"type\":\"string\"},\"limit\":{\"name\":\"limit\",\"description\":\"Limiting and Pagination\",\"required\":false,\"in\":\"query\",\"type\":\"string\"},\"body.todos\":{\"name\":\"todos\",\"description\":\"todos\",\"required\":false,\"in\":\"body\",\"schema\":{\"$ref\":\"#/definitions/todos\"}},\"rowFilter.todos.id\":{\"name\":\"id\",\"required\":false,\"format\":\"bigint\",\"in\":\"query\",\"type\":\"string\"},\"rowFilter.todos.title\":{\"name\":\"title\",\"required\":false,\"format\":\"text\",\"in\":\"query\",\"type\":\"string\"},\"rowFilter.todos.description\":{\"name\":\"description\",\"required\":false,\"format\":\"text\",\"in\":\"query\",\"type\":\"string\"},\"rowFilter.todos.due_date\":{\"name\":\"due_date\",\"required\":false,\"format\":\"date\",\"in\":\"query\",\"type\":\"string\"},\"rowFilter.todos.is_completed\":{\"name\":\"is_completed\",\"required\":false,\"format\":\"boolean\",\"in\":\"query\",\"type\":\"string\"},\"rowFilter.todos.user_id\":{\"name\":\"user_id\",\"required\":false,\"format\":\"uuid\",\"in\":\"query\",\"type\":\"string\"}},\"externalDocs\":{\"description\":\"PostgREST Documentation\",\"url\":\"https://postgrest.org/en/v12.2/api.html\"}}\",",
+      "recommendation": "For local-only MCP servers, bind to 127.0.0.1 so only processes on the same machine can connect. If remote access is genuinely needed, require authentication and use a reverse proxy with TLS."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WzuUnN\\packages\\mcp-server-supabase\\test\\mocks.ts",
+      "line": 275,
+      "snippet": "        api_key: 'dumm...-key',\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WzuUnN\\packages\\mcp-server-supabase\\test\\mocks.ts",
+      "line": 281,
+      "snippet": "        api_key: 'sb_p...ey_1',\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WzuUnN\\supabase\\config.toml",
+      "line": 66,
+      "snippet": "openai_api_key = \"env(...KEY)\"\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WzuUnN\\supabase\\config.toml",
+      "line": 186,
+      "snippet": "auth_token = \"env(...KEN)\"\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    },
+    {
+      "id": "PLAINTEXT_SECRET",
+      "severity": "critical",
+      "title": "Hardcoded credential assignment",
+      "description": "A variable with a credential-sounding name is assigned a string value longer than 12 characters. This is likely a hardcoded API key, token, or password.",
+      "file": "C:\\Users\\Lenovo\\AppData\\Local\\Temp\\mcp-scan-WzuUnN\\supabase\\config.toml",
+      "line": 218,
+      "snippet": "secret = \"env(...RET)\"\r",
+      "recommendation": "Move this value to an environment variable or a secrets manager. Never hardcode secrets in source files."
+    }
+  ],
+  "score": 0,
+  "grade": "F"
+}
