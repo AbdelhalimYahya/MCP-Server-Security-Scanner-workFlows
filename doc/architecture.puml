@@ -1,0 +1,36 @@
+@startuml
+!theme plain
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+!define BG_CLI E8F5E9
+!define BG_SCANNER E3F2FD
+!define BG_RULES FFF3E0
+!define BG_REPORT F3E5F5
+!define BG_SCORE FCE4EC
+!define BG_INFRA E0F7FA
+!define BG_TEST EFEBE9
+
+title "MCP Server Security Scanner - Architecture"
+
+actor "User" as USER
+cloud "GitHub Repository" as GITHUB #BG_INFRA
+folder "Local Directory" as FSDIR #BG_INFRA
+
+package "CLI Layer" #BG_CLI {
+  component "cli.ts" #BG_CLI [
+    Commander arg parser
+    scan <target> command
+    --json / --html / --no-html
+    --min-severity / --quiet
+    --version / --help
+    GitHub URL -> shallow clone
+    Binds output reports
+  ]
+  component "gitUtils.ts" #BG_CLI [
+    isGitHubUrl()
+    normalizeGitHubUrl()
+  ]
+}
+@enduml
